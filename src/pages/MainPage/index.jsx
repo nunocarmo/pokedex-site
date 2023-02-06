@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useQuery } from 'react-query'
-import PokeCard from '../components/PokeCard'
-import SideBar from '../components/SideBar'
+import PokeCard from '../../components/PokeCard'
+import SideBar from '../../components/SideBar'
 import './style.css'
 function Main() {
     const { isLoading, data } = useQuery('pokemon-list', async () => {
@@ -15,10 +15,10 @@ function Main() {
             <div className='MainPage'>
                 <SideBar />
                 <ul className='cardGrid'>
-                    {data?.results.map(({ name, url }) => {
+                    {data?.results?.map(({ name, url }) => {
                         const arr = url.split("/");
                         const id = arr[arr.length - 2];
-                        return <PokeCard key={id} name={name} url={url} id={id} />
+                        return <PokeCard key={id} name={name} id={id} />
                     })}
                 </ul>
             </div>
