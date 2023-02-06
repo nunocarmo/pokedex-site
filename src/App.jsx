@@ -1,8 +1,9 @@
+import Main from "./pages/MainPage"
 
 function App() {
   return (
     <div className="App">
-      Pokedex
+      <Main />
     </div>
   )
 }

@@ -1,0 +1,24 @@
+#sideBar {
+    display: flex;
+    flex-flow: column;
+    background-color: #D6CCC2;
+    height: 100%;
+    width: 200px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+#sideBar label {
+    width: auto;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 15px;
+    word-wrap: unset;
+
+}
+
+#sideBar input {
+    height: 30px;
+    width: 80%;
+
+}

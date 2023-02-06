@@ -1,0 +1,20 @@
+.MainPage {
+    display: flex;
+    height: 100%;
+}
+
+.cardGrid {
+    margin: 10px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    justify-items: center;
+    overflow: auto;
+}
+
+@media(min-width: 1000px) {
+    .cardGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
