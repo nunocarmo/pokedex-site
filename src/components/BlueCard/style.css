@@ -1,12 +1,18 @@
+* {
+    --gold: #D79527;
+    --dark: #1A1816;
+}
+
+
 .blueCard {
+    padding: 4px;
     display: flex;
-    background-color: #30a7d7;
-    width: 500px;
-    height: 100px;
+    width: 100%;
     border-radius: 20px;
     justify-content: space-around;
     align-items: center;
-    color: white;
+    color: var(--gold);
     font-weight: bold;
-    font-size: 23px;
+    font-size: 2px;
+    font-size: 20px;
 }

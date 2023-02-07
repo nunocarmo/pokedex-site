@@ -1,9 +1,16 @@
+* {
+    --gold: #D79527;
+    --dark: #1A1816;
+    --dark-ligther: #1E1E1E;
+    --dark-ligther-hover: #262626;
+}
+
 .pokeCard {
     display: flex;
     width: 70%;
     max-width: 300px;
     min-width: 30px;
-    background-color: #EDEDE9;
+    background-color: var(--dark-ligther);
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
@@ -21,8 +28,10 @@
     margin-top: -15px;
     font-size: 20px;
     font-weight: bold;
+    color: var(--gold);
 }
 
 .pokeCard:hover {
-    background-color: #D6CCC2;
+    background-color: var(--dark-ligther-hover);
+    ;
 }

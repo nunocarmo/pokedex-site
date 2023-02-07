@@ -5,21 +5,6 @@ import BlueCard from '../../components/BlueCard';
 import StatCard from '../../components/StatCard';
 import './style.css'
 
-const TypesColorEnum = {
-  fire: "#fd7d24",
-  psychic: "#f366b9",
-  grass: "#9bcc50",
-  poison: "#b97fc9",
-  flying: "#86a6af",
-  ice: "#51c4e7",
-  water: "#4592c4",
-  eletric: "#eed535",
-  rock: "#a38c21",
-  bug: "#729f3f",
-  normal: "#a4acaf",
-  fighting: "#d56723",
-}
-
 function PokeFullInfo() {
   const { id } = useParams();
   const { isLoading, data } = useQuery('pokemon-list', async () => {
@@ -34,6 +19,40 @@ function PokeFullInfo() {
   if (isLoading) return <h2>Loading...</h2>
 
   return (
+    <>
+      <div className='cardPageBody'>
+        <div className='pokemonCard'>
+          <BlueCard data={data} />
+          <section className='sectionOne'></section>
+          <p className='pokeName'>{data?.name}</p>
+          <section className='pokemonBigImg'>
+            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`} />
+          </section>
+          <StatCard data={data} />
+          <section className='sectionTwo'></section>
+          <div className='types'>
+            <p>Types</p>
+            <section className='typeList'>
+              {data?.types?.map(({ type }, index) => <p key={index}>{type.name}</p>)}
+            </section>
+          </div>
+          <section className='square'>
+            <section className='diamond'>
+              <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`} alt='pokemon name' />
+            </section>
+          </section>
+
+
+          <></>
+        </div>
+      </div>
+    </>
+  )
+
+
+
+
+  /* return (
     <>
       <div className='infoGrid'>
         <section className='pokemonBigImg'>
@@ -52,8 +71,8 @@ function PokeFullInfo() {
           </section>
         </div>
       </div>
-    </>
-  )
+    </> 
+  )*/
 }
 
 export default PokeFullInfo

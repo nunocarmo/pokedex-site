@@ -3,8 +3,8 @@ import './style.css'
 function BlueCard({ data }) {
   return (
     <div className='blueCard'>
-      <p>Height: <span>{data?.height * 10} cm</span></p>
-      <p>Weight: <span>{data?.weight / 10} kg</span></p>
+      <span>Height: <span>{data?.height * 10} cm</span></span>
+      <span>Weight: <span>{data?.weight / 10} kg</span></span>
     </div>
   )
 }

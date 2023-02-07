@@ -1,34 +1,81 @@
-.infoGrid {
-    display: grid;
-    grid-template-areas:
-        "img stat"
-        "img stat"
-        "img blue"
-        "img type";
-    height: 100%;
-    justify-content: space-evenly;
-    align-content: center;
+* {
+    --gold: #D79527;
+    --dark: #1A1816;
+    --dark-ligther: #1E1E1E;
+}
+
+.cardPageBody {
+    background-color: var(--dark-ligther);
+    padding-top: 60px;
+    min-block-size: -webkit-fill-available;
+}
+
+.pokemonCard {
+    position: relative;
+    height: 90%;
+    width: 30%;
+    margin: auto;
+    top: 5%;
+    background-color: var(--dark);
+    border-radius: 30px;
+    min-width: 350px;
+    min-height: 800px;
+}
+
+
+.pokemonBigImg {
+    position: absolute;
+    border: 9px solid var(--gold);
+    width: 70%;
+    left: 13%;
+    top: 10%;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.pokemonBigImg img {
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 200px;
+    background-size: contain;
+}
+
+.cardPageBody p {
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 2rem;
+
+}
+
+.sectionOne,
+.sectionTwo {
+    position: absolute;
+    background-color: var(--gold);
+    width: 80%;
+    height: 2px;
+    left: 10%;
+}
+
+.sectionOne {
+    top: 4%;
+}
+
+.sectionTwo {
+    bottom: 18%;
+}
+
+.pokeName {
+    position: absolute;
+    left: 15%;
+    top: 5%;
 }
 
 .types {
-    grid-area: type;
-    border: 1px solid rgb(171, 171, 171);
-    border-radius: 10px;
-    width: 500px;
-    height: 50px;
-    margin-top: 15px;
-    padding-top: 5px;
-}
-
-.blueCard {
-    grid-area: blue;
-}
-
-.pokemonBigImg {
-    grid-area: img;
+    position: absolute;
+    width: 100%;
+    bottom: 9%;
     text-align: center;
-    font-size: 30px;
-    font-weight: bold;
 }
 
 .typeList {
@@ -36,20 +83,52 @@
     justify-content: space-evenly;
 }
 
-.types p {
-    padding: 2px;
-    text-align: center;
-    font-weight: bold;
-    font-size: large;
-}
-
-.typeList div {
-    width: 90px;
+.typeList p {
+    margin: 3px;
+    padding: 2px 10px 2px 10px;
+    width: auto;
     height: 20px;
+    border: 1px solid var(--gold);
     border-radius: 40px;
     margin-bottom: 6px;
     font-weight: bold;
     text-align: center;
     font-size: 18px;
     font-family: monospace;
+}
+
+.end {
+    width: 100%;
+    height: 1px;
+    background-color: red
+}
+
+.square {
+    position: absolute;
+    border: 2px solid var(--gold);
+    width: 100px;
+    height: 100px;
+    right: 5%;
+    top: 5%;
+    background-color: var(--dark);
+    ;
+}
+
+.diamond {
+    position: absolute;
+    border: 2px solid var(--gold);
+    width: 70px;
+    height: 70px;
+    transform: rotate(45deg);
+    right: 13%;
+    top: 13%;
+}
+
+.diamond>img {
+    height: 80px;
+    width: 90px;
+    position: absolute;
+    right: -16%;
+    bottom: -10%;
+    transform: rotate(-45deg);
 }

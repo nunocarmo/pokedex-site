@@ -1,7 +1,13 @@
+* {
+    --gold: #D79527;
+    --dark: #1A1816;
+    --dark-ligther: #1E1E1E;
+}
+
 #sideBar {
     display: flex;
     flex-flow: column;
-    background-color: #D6CCC2;
+    background-color: var(--dark-ligther);
     height: 100%;
     width: 200px;
     align-items: center;
@@ -14,6 +20,7 @@
     padding: 10px;
     font-size: 15px;
     word-wrap: unset;
+    color: var(--gold);
 
 }
 
