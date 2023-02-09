@@ -12,6 +12,7 @@
     width: 200px;
     align-items: center;
     flex-shrink: 0;
+    gap: 15px;
 }
 
 #sideBar label {
@@ -28,4 +29,10 @@
     height: 30px;
     width: 80%;
 
+}
+
+.search,
+.reset {
+    height: 40px;
+    width: 120px;
 }

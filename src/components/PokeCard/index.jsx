@@ -5,7 +5,7 @@ function PokeCard({ name, id }) {
     const navigate = useNavigate();
     return (
         <li onClick={() => navigate(`/pokeinfo/${id}`)} className='pokeCard'>
-            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`} alt='pokemon name' />
+            <img className='pokeSprite' src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`} alt='pokemon name' width="250" height="250" />
             <p>{name}</p>
         </li>
     )

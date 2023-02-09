@@ -5,11 +5,11 @@ function StatCard({ data }) {
   return (
     <>
       <div className='statCard'>
-        {data?.stats?.map(({ base_stat, stat }, index) => {
+        {data?.map(({ base_stat, pokemon_v2_stat }, index) => {
           return (
             <section key={index}>
               <div className='stat' style={{ height: `${base_stat}px` }}></div>
-              <p>{stat.name}</p>
+              <p>{pokemon_v2_stat.name}</p>
             </section>
           )
         })}

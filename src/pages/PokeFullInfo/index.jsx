@@ -1,5 +1,5 @@
 import React from 'react'
-import { useQuery } from 'react-query';
+import { gql, useQuery as useQueryApollo } from '@apollo/client'
 import { useParams } from 'react-router-dom'
 import BlueCard from '../../components/BlueCard';
 import StatCard from '../../components/StatCard';
@@ -7,12 +7,29 @@ import './style.css'
 
 function PokeFullInfo() {
   const { id } = useParams();
-  const { isLoading, data } = useQuery('pokemon-list', async () => {
-    const result = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`);
-    return await result.json();
-  });
+  const FULL_POKEMON_INFO_QUERY = gql`query getFullInfoOfPokemon {
+    pokemon_v2_pokemon(where: {id: {_eq: ${id}}}) {
+      id
+      name
+      height
+      weight
+      pokemon_v2_pokemontypes {
+        pokemon_v2_type {
+          name
+        }
+      }
+      pokemon_v2_pokemonstats {
+        base_stat
+        pokemon_v2_stat {
+          name
+        }
+      }
+    }
+  }
+`
+  const { isLoading, data } = useQueryApollo(FULL_POKEMON_INFO_QUERY);
 
-
+  console.log(data?.pokemon_v2_pokemon[0])
 
 
 
@@ -22,18 +39,18 @@ function PokeFullInfo() {
     <>
       <div className='cardPageBody'>
         <div className='pokemonCard'>
-          <BlueCard data={data} />
+          <BlueCard data={data?.pokemon_v2_pokemon[0]} />
           <section className='sectionOne'></section>
-          <p className='pokeName'>{data?.name}</p>
+          <p className='pokeName'>{data?.pokemon_v2_pokemon[0]?.name}</p>
           <section className='pokemonBigImg'>
             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`} />
           </section>
-          <StatCard data={data} />
+          <StatCard data={data?.pokemon_v2_pokemon[0].pokemon_v2_pokemonstats} />
           <section className='sectionTwo'></section>
           <div className='types'>
             <p>Types</p>
             <section className='typeList'>
-              {data?.types?.map(({ type }, index) => <p key={index}>{type.name}</p>)}
+              {data?.pokemon_v2_pokemon[0].pokemon_v2_pokemontypes?.map(({ pokemon_v2_type }, index) => <p key={index}>{pokemon_v2_type.name}</p>)}
             </section>
           </div>
           <section className='square'>

@@ -1,15 +1,24 @@
-import { Route, Routes } from "react-router-dom"
+import { Navigate, NavLink, Route, Routes, useNavigate } from "react-router-dom"
 import Main from "./pages/MainPage"
 import PokeFullInfo from "./pages/PokeFullInfo"
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client"
+
 
 function App() {
+  const client = new ApolloClient({
+    cache: new InMemoryCache(),
+    uri: "https://beta.pokeapi.co/graphql/v1beta",
+  });
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/pokeinfo/:id" element={<PokeFullInfo />} />
-      </Routes>
-    </div>
+    <ApolloProvider client={client}>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Navigate to="/1" />} />
+          <Route path="/:page" element={<Main />} />
+          <Route path="/pokeinfo/:id" element={<PokeFullInfo />} />
+        </Routes>
+      </div>
+    </ApolloProvider>
   )
 }
 

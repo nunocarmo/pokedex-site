@@ -12,7 +12,7 @@
 
 .cardGrid {
     background-color: var(--dark);
-    padding: 10px;
+    padding-top: 10px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -21,8 +21,70 @@
     overflow: auto;
 }
 
+
+.pokemonListContainer {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    align-items: center;
+    background-color: var(--dark);
+}
+
 @media(min-width: 1000px) {
     .cardGrid {
         grid-template-columns: repeat(4, 1fr);
     }
+}
+
+.buttonStyle {
+    background-color: var(--dark);
+    border: 1px solid var(--gold);
+    border-radius: .25rem;
+    box-sizing: border-box;
+    color: var(--gold);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+    cursor: pointer;
+    margin: 0;
+}
+
+.pageButton {
+    height: 40px;
+    width: 120px;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    transition: all 250ms;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.buttonStyle:hover,
+.buttonStyle:focus {
+    border-color: #d49d3e;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: var(--gold);
+    box-shadow: rgb(255, 255, 255) 0 1px 3px 0;
+}
+
+
+
+.buttonStyle:hover {
+    transform: translateY(-1px);
+}
+
+.buttonStyle:active {
+    background-color: #d49d3e;
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    color: rgba(0, 0, 0, 0.65);
+    transform: translateY(0);
+}
+
+.buttonStyle:disabled {
+    background-color: #373737;
+    border-color: rgba(0, 0, 0, 0);
+    box-shadow: rgba(0, 0, 0, 0) 0 2px 4px;
+    color: rgb(0, 0, 0);
 }
