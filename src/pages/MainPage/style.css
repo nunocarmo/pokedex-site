@@ -14,6 +14,7 @@
     background-color: var(--dark);
     padding-top: 10px;
     width: 100%;
+    height: 100vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
@@ -28,6 +29,7 @@
     flex-grow: 2;
     align-items: center;
     background-color: var(--dark);
+    height: 100%;
 }
 
 @media(min-width: 1000px) {
@@ -35,6 +37,32 @@
         grid-template-columns: repeat(4, 1fr);
     }
 }
+
+@media(max-width: 600px) {
+    #sideBar {
+        width: 100%;
+    }
+
+    .MainPage {
+        display: flex;
+        height: auto;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btnSection {
+        background-color: var(--dark);
+        display: flex;
+        justify-content: center;
+        position: sticky;
+        width: 100%;
+        height: auto;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+
 
 .buttonStyle {
     background-color: var(--dark);

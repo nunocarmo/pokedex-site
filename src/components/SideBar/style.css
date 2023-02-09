@@ -36,3 +36,14 @@
     height: 40px;
     width: 120px;
 }
+
+
+@media(max-width: 600px) {
+    #sideBar {
+        position: sticky;
+        width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
+    }
+}

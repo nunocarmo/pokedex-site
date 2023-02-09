@@ -44,8 +44,6 @@ function Main() {
     }
     function renderPokemonList() {
         return data?.pokemon_v2_pokemon?.map(({ name, id }) => {
-            if (skip) return
-            if (name === "gimmighoul-roaming") skip = true;
             return <PokeCard key={id} name={name} id={id} />
         })
     }
@@ -59,9 +57,9 @@ function Main() {
                     <ul className='cardGrid'>
                         {renderPokemonList()}
                     </ul>
-                    <div>
-                        <button disabled={Number(page) === 1 || isSearching} className='pageButton buttonStyle' onClick={() => navigate(`/${Number(page) - 1}`)}>Previous</button>
-                        <button disabled={Number(page) === 64 || isSearching} className='pageButton buttonStyle' onClick={() => navigate(`/${Number(page) + 1}`)}>Next</button>
+                    <div className='btnSection'>
+                        <button disabled={Number(page) === 1 || isSearching || page.includes("search")} className='pageButton buttonStyle' onClick={() => navigate(`/${Number(page) - 1}`)}>Previous</button>
+                        <button disabled={Number(page) === 64 || isSearching || page.includes("search")} className='pageButton buttonStyle' onClick={() => navigate(`/${Number(page) + 1}`)}>Next</button>
                     </div>
                 </div>
             </div>
