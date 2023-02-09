@@ -44,8 +44,7 @@
 .cardPageBody p {
     color: var(--gold);
     font-weight: bold;
-    font-size: 2rem;
-
+    font-size: max(1.4vw, 15px);
 }
 
 .sectionOne,
@@ -67,8 +66,13 @@
 
 .pokeName {
     position: absolute;
-    left: 15%;
+    display: flex;
+    width: 77%;
     top: 5%;
+    white-space: pre;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
 }
 
 .types {
@@ -111,7 +115,6 @@
     right: 5%;
     top: 5%;
     background-color: var(--dark);
-    ;
 }
 
 .diamond {
