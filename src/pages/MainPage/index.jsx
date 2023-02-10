@@ -1,5 +1,5 @@
 import { gql, useQuery as useQueryApollo } from '@apollo/client'
-import React, { useEffect, useState } from 'react'
+import { useState } from 'react';
 import { Navigate, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import PokeCard from '../../components/PokeCard'
 import SideBar from '../../components/SideBar'
@@ -51,6 +51,7 @@ function Main() {
     return (
         <>
             {page <= 0 ? <Navigate to="/1" /> : null}
+            {page > 64 ? <Navigate to="/64" /> : null}
             <div className='MainPage'>
                 <SideBar searchHandle={searchHandle} resetHandle={resetHandle} />
                 <div className='pokemonListContainer'>
@@ -63,6 +64,7 @@ function Main() {
                     </div>
                 </div>
             </div>
+
         </>
     )
 }

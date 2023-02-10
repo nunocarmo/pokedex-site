@@ -1,4 +1,4 @@
-import { Navigate, NavLink, Route, Routes, useNavigate } from "react-router-dom"
+import { Navigate, Route, Routes } from "react-router-dom"
 import Main from "./pages/MainPage"
 import PokeFullInfo from "./pages/PokeFullInfo"
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client"

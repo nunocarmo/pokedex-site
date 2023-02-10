@@ -28,13 +28,7 @@ function PokeFullInfo() {
   }
 `
   const { isLoading, data } = useQueryApollo(FULL_POKEMON_INFO_QUERY);
-
-  console.log(data?.pokemon_v2_pokemon[0])
-
-
-
   if (isLoading) return <h2>Loading...</h2>
-
   return (
     <>
       <div className='cardPageBody'>
@@ -58,8 +52,6 @@ function PokeFullInfo() {
               <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`} alt='pokemon name' />
             </section>
           </section>
-
-
           <></>
         </div>
       </div>

@@ -1,6 +1,10 @@
 * {
     padding: 0;
     margin: 0;
+    --gold: #D79527;
+    --dark: #1A1816;
+    --dark-ligther: #1E1E1E;
+    --dark-ligther-hover: #262626;
 }
 
 html,
