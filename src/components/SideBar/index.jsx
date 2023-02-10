@@ -2,7 +2,7 @@ import { useRef } from "react"
 import "./style.css"
 
 function SideBar({ searchHandle, resetHandle }) {
-    const textInput = useRef("");
+    const textInput = useRef();
     return (
         <nav id='sideBar'>
             <label htmlFor="pokemon-search">Search Pokemon Name</label>
